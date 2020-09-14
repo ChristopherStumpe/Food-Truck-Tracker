@@ -83,7 +83,9 @@ userRouter.get('/favorites/:userId', (req, res) => {
 
 // create a new user
 userRouter.post('/new', (req, res) => {
-  const { fullName, googleId, profilePhotoUrl, defaultBadge } = req.body;
+  const {
+    fullName, googleId, profilePhotoUrl, defaultBadge,
+  } = req.body;
   // console.log(req.body);
   User.findOrCreate({
     where: {

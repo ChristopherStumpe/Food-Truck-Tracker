@@ -52,7 +52,7 @@ function doStuffWithUserModel() {
       if (numberEffected) {
         return console.log(`✅ "User 1 "Badges Updated: ${numberEffected}`);
       }
-      console.error(`❌save undefined`);
+      return console.error('❌save undefined');
     })
     .catch((err) => {
       console.error(`❌${err}`);
