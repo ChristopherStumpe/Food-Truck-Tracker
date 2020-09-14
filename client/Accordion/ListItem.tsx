@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 export const LIST_ITEM_HEIGHT = 54;
 const styles = StyleSheet.create({
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
 export interface ListItem {
   name: string;
   points: string;
+  image?: File;
 }
 
 interface ListItemProps {
@@ -54,6 +56,7 @@ export default ({ item, isLast }: ListItemProps) => {
       <View style={styles.pointsContainer}>
         <Text style={styles.points}>{item.points}</Text>
       </View>
+      <Image source={item.image}/>
     </View>
   );
 };

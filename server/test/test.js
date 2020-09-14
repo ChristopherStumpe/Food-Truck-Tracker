@@ -9,6 +9,54 @@ function doStuffWithUserModel() {
       full_name: 'John Smith',
     },
   });
+  User.update(
+    {
+      badge: {
+        badge1: {
+          title: 'title',
+          logo: 'png',
+          description: 'desc',
+          unlocked: true,
+          qrCode: 'qr',
+        },
+        badge2: {
+          title: 'title',
+          logo: 'png',
+          description: 'desc',
+          unlocked: true,
+          qrCode: 'qr',
+        },
+        badge3: {
+          title: 'title',
+          logo: 'png',
+          description: 'desc',
+          unlocked: false,
+          qrCode: 'qr',
+        },
+        badge4: {
+          title: 'title',
+          logo: 'png',
+          description: 'desc',
+          unlocked: true,
+          qrCode: 'qr',
+        },
+      },
+    },
+    {
+      where: {
+        id: 1,
+      },
+    },
+  )
+    .then((numberEffected) => {
+      if (numberEffected) {
+        return console.log(`✅ "User 1 "Badges Updated: ${numberEffected}`);
+      }
+      console.error(`❌save undefined`);
+    })
+    .catch((err) => {
+      console.error(`❌${err}`);
+    });
   const foundUser = User.findOne({ where: { full_name: 'John Smith' } });
   if (foundUser === null) {
     return;

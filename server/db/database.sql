@@ -4,7 +4,7 @@ CREATE TABLE "users" (
   "id" SERIAL PRIMARY KEY,
   "full_name" varchar,
   "google_id" varchar,
-  "badge" JSON,
+  "badge" JSONB,
   "profile_photo_url" varchar,
   "created_at" timestamp
 );

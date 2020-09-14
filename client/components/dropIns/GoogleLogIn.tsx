@@ -44,6 +44,7 @@ export default function GoogleLogIn({
           fullName: result.user.name,
           googleId: result.user.id,
           profilePhotoUrl: result.user.photoUrl,
+          defaultBadge: badgeObject,
         })
           .then((response) => {
             console.log('response.data', response.data);
@@ -72,7 +73,36 @@ export default function GoogleLogIn({
       return { error: true };
     }
   }
-
+  const badgeObject = {
+    badge1: {
+      title: 'title',
+      logo: '../../assets/foodtruckstillsmall.png',
+      description: 'desc',
+      unlocked: false,
+      qrCode: 'qr',
+    },
+    badge2: {
+      title: 'title',
+      logo: 'png',
+      description: 'desc',
+      unlocked: false,
+      qrCode: 'qr',
+    },
+    badge3: {
+      title: 'title',
+      logo: 'png',
+      description: 'desc',
+      unlocked: false,
+      qrCode: 'qr',
+    },
+    badge4: {
+      title: 'title',
+      logo: 'png',
+      description: 'desc',
+      unlocked: false,
+      qrCode: 'qr',
+    },
+  };
   const userSignIn = () => {
     signUserInWithGoogleAsync(userConfig);
   };
